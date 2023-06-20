@@ -1,0 +1,39 @@
+Exp No: 22
+Date:
+DATABASECONNECTIVITYUSINGPHP AND MYSQL
+AIM:
+To connect the MySQL using PHP and to execute the CREATE, INSERT, DELETE, UPDATE and SELECT command in MySQL
+PROGRAM:
+<?php
+$host=”localhost”
+$user=”root”
+$password=”root”;
+$conn=mysqli_connect($host,$user,$password);
+if(!$conn)
+{
+Die(‘couldnot connect:’,mysql_connect_error());
+}
+echo “successfully connected (‘br/>’)”;
+$sql=’Create database mydb’;
+$sql="create table emp(id int, name varchar(10) NOT NULL, empsalary INT NOT NULL, primary key(id))";
+$sql=”insert into emp(id,name,empsalary) values(312,RANA,200000)”;
+$sql=”delete from emp where id=1”;
+$sql=”update emp set empsalary=9000000 where id=312”;
+if(mysqli_query($conn,$sql))
+{
+echo ”operations failed failed”,mysqli_error($conn);
+}
+mysqli_close($conn);
+?>
+OUTPUT:
+After creation of database and emp table
+ 
+After insertion:
+ 
+After deletion:
+ 
+After updation:
+ 
+
+RESULT: Thus the MySQL is connected using PHP and executed the CREATE, INSERT, DELETE, UPDATE and SELECT command in MySQL.
+
